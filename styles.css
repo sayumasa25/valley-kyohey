@@ -631,11 +631,13 @@ body {
         right: 0;
         background: white;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        transform: translateY(-100%);
+        transform: translateY(-10px);
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
+        width: 100%;
+        order: 4;
     }
     
     .nav-menu.active {
@@ -648,16 +650,24 @@ body {
         flex-direction: column;
         padding: 1rem 0;
         gap: 0;
+        margin: 0;
     }
     
     .nav-menu li {
         border-bottom: 1px solid #f0f0f0;
+        width: 100%;
     }
     
     .nav-menu a {
         display: block;
         padding: 1rem 2rem;
         color: #333;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    
+    .nav-menu a:hover {
+        background-color: #f8f9fa;
     }
     
     .auth-buttons {
