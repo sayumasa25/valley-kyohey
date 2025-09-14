@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バレー郷平 - バレーボールコート予約・イベント参加サイト</title>
+    <meta name="description" content="バレーボールコートの空きを検索して予約できます！東京都や神奈川県をはじめ、全国のバレーボール施設が対象！またイベント主催や参加も簡単にできます。">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-placeholder">🏐</div>
+                    <h1>バレー郷平</h1>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#courts">コート</a></li>
+                        <li><a href="#events">イベント・大会</a></li>
+                        <li><a href="#circles">サークル</a></li>
+                        <li><a href="#junior">ジュニア</a></li>
+                        <li><a href="#blog">ブログ</a></li>
+                        <li><a href="#equipment">用具</a></li>
+                        <li><a href="#schools">スクール</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#login" class="btn-login">ログイン</a>
+                    <a href="#register" class="btn-register">登録</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop class="hero-video">
+                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">バレーボールを日常にしよう。</h1>
+                <p class="hero-subtitle">全国のバレーボールコートを簡単予約！イベント参加でもっと楽しく！</p>
+                
+                <!-- Search Form -->
+                <div class="search-form">
+                    <div class="search-tabs">
+                        <button class="tab-btn active" data-tab="court">コート検索</button>
+                        <button class="tab-btn" data-tab="event">イベント検索</button>
+                    </div>
+                    
+                    <div class="search-content">
+                        <div class="tab-content active" id="court-search">
+                            <div class="search-row">
+                                <select class="search-select">
+                                    <option value="">都道府県を選択</option>
+                                    <option value="tokyo">東京都</option>
+                                    <option value="kanagawa">神奈川県</option>
+                                    <option value="saitama">埼玉県</option>
+                                    <option value="chiba">千葉県</option>
+                                </select>
+                                <input type="date" class="search-input" placeholder="日付">
+                                <input type="time" class="search-input" placeholder="時間">
+                                <button class="search-btn"><i class="fas fa-search"></i> 検索</button>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-content" id="event-search">
+                            <div class="search-row">
+                                <select class="search-select">
+                                    <option value="">エリアを選択</option>
+                                    <option value="kanto">関東</option>
+                                    <option value="kansai">関西</option>
+                                    <option value="chubu">中部</option>
+                                </select>
+                                <select class="search-select">
+                                    <option value="">レベルを選択</option>
+                                    <option value="beginner">初心者</option>
+                                    <option value="intermediate">中級者</option>
+                                    <option value="advanced">上級者</option>
+                                </select>
+                                <button class="search-btn"><i class="fas fa-search"></i> 検索</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>全国のコート検索</h3>
+                    <p>都営・県営・市営・区営・民間施設まで、全国のバレーボールコートを検索・予約できます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>イベント・練習会</h3>
+                    <p>レベル別の練習会や大会に参加して、新しい仲間と出会いましょう。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>サークル管理</h3>
+                    <p>サークルの管理や新メンバーの募集が簡単にできます。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>アプリで便利</h3>
+                    <p>スマートフォンアプリでいつでもどこでも予約・参加が可能です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courts Section -->
+    <section class="popular-courts">
+        <div class="container">
+            <h2 class="section-title">人気のバレーボールコート</h2>
+            <div class="courts-grid">
+                <div class="court-card">
+                    <div class="court-image-placeholder">🏐</div>
+                    <div class="court-info">
+                        <h3>東京体育館</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 東京都渋谷区</p>
+                        <p class="court-price">¥2,000/時間</p>
+                        <div class="court-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-text">4.8 (124件)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="court-card">
+                    <div class="court-image-placeholder">🏐</div>
+                    <div class="court-info">
+                        <h3>横浜アリーナ</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 神奈川県横浜市</p>
+                        <p class="court-price">¥2,500/時間</p>
+                        <div class="court-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-text">4.6 (89件)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="court-card">
+                    <div class="court-image-placeholder">🏐</div>
+                    <div class="court-info">
+                        <h3>埼玉県立武道館</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 埼玉県さいたま市</p>
+                        <p class="court-price">¥1,800/時間</p>
+                        <div class="court-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-text">4.5 (67件)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events">
+        <div class="container">
+            <h2 class="section-title">今週のイベント・練習会</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">9月</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>初心者歓迎！バレーボール練習会</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 東京都新宿区 - 新宿スポーツセンター</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 19:00 - 21:00</p>
+                        <p class="event-level"><span class="level-badge beginner">初心者</span></p>
+                        <p class="event-participants">参加者: 12/16名</p>
+                    </div>
+                    <div class="event-action">
+                        <button class="btn-join">参加する</button>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">9月</span>
+                        <span class="day">16</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>中級者向けゲーム練習</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 神奈川県横浜市 - 横浜体育館</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 14:00 - 17:00</p>
+                        <p class="event-level"><span class="level-badge intermediate">中級者</span></p>
+                        <p class="event-participants">参加者: 8/12名</p>
+                    </div>
+                    <div class="event-action">
+                        <button class="btn-join">参加する</button>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">9月</span>
+                        <span class="day">17</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>女性限定バレーボール大会</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 東京都品川区 - 品川区総合体育館</p>
+                        <p class="event-time"><i class="fas fa-clock"></i> 10:00 - 16:00</p>
+                        <p class="event-level"><span class="level-badge all">全レベル</span></p>
+                        <p class="event-participants">参加者: 24/32名</p>
+                    </div>
+                    <div class="event-action">
+                        <button class="btn-join">参加する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-download">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2>アプリならもっと便利</h2>
+                    <p>スマートフォンアプリで、いつでもどこでもコート予約やイベント参加ができます。</p>
+                    <div class="app-buttons">
+                        <a href="#" class="app-store-btn">
+                            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+                        </a>
+                        <a href="#" class="google-play-btn">
+                            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="スマートフォンアプリ">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>バレー郷平について</h3>
+                    <ul>
+                        <li><a href="#">サービス概要</a></li>
+                        <li><a href="#">運営者紹介</a></li>
+                        <li><a href="#">よくあるご質問</a></li>
+                        <li><a href="#">バレーボールレベル</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>コート・施設</h3>
+                    <ul>
+                        <li><a href="#">空きコート検索</a></li>
+                        <li><a href="#">全てのバレーボール場</a></li>
+                        <li><a href="#">地域別コート</a></li>
+                        <li><a href="#">施設利用上の注意</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>イベント・大会</h3>
+                    <ul>
+                        <li><a href="#">練習会・イベント</a></li>
+                        <li><a href="#">大会情報</a></li>
+                        <li><a href="#">ジュニア大会</a></li>
+                        <li><a href="#">サークル一覧</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>その他</h3>
+                    <ul>
+                        <li><a href="#">ブログ</a></li>
+                        <li><a href="#">バレーボール用具</a></li>
+                        <li><a href="#">スクール情報</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 バレー郷平. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
