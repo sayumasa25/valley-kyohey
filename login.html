@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="login-page-title">ログイン - バレー郷平</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="site-title">Sabai Volley</a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" data-lang="nav-home">ホーム</a></li>
+                        <li><a href="#courts" data-lang="nav-courts">コート</a></li>
+                        <li><a href="#events" data-lang="nav-events">イベント・大会</a></li>
+                        <li><a href="#circles" data-lang="nav-circles">サークル</a></li>
+                        <li><a href="#junior" data-lang="nav-junior">ジュニア</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-login active" data-lang="btn-login">ログイン</a>
+                    <a href="register.html" class="btn-register" data-lang="btn-register">登録</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="メニューを開く" data-lang="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h1 class="auth-title" data-lang="login-title">ログイン</h1>
+                    <p class="auth-subtitle" data-lang="login-subtitle">アカウントにログインしてバレーボールを楽しもう！</p>
+                    
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label for="loginUserId" data-lang="label-userid">ユーザーID</label>
+                            <input type="text" id="loginUserId" name="userId" required 
+                                   placeholder="ユーザーIDを入力" data-lang="placeholder-userid">
+                            <span class="form-error" id="loginUserIdError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword" data-lang="label-password">パスワード</label>
+                            <input type="password" id="loginPassword" name="password" required 
+                                   placeholder="パスワードを入力" data-lang="placeholder-password">
+                            <span class="form-error" id="loginPasswordError"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe" name="rememberMe">
+                                <span class="checkmark"></span>
+                                <span data-lang="remember-me">ログイン状態を保持する</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="auth-btn" data-lang="login-button">ログイン</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p><a href="#" class="auth-link" data-lang="forgot-password">パスワードを忘れた方</a></p>
+                        <p><span data-lang="no-account">アカウントをお持ちでない方は</span> <a href="register.html" class="auth-link" data-lang="register-link">新規登録</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

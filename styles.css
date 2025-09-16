@@ -26,7 +26,8 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 1001;
+    height: 80px;
 }
 
 .nav-wrapper {
@@ -34,33 +35,82 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    order: 1;
 }
 
-.logo-placeholder {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e74c3c, #f39c12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: white;
-    border: 2px solid #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.logo h1 {
-    color: #e74c3c;
-    font-size: 1.8rem;
-    font-weight: 700;
+.site-title {
+    font-size: 2rem;
+    font-weight: 900;
     margin: 0;
+    text-decoration: none;
+    display: block;
+    font-family: 'Impact', 'Arial Black', 'Helvetica', sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    color: #e74c3c;
+    text-shadow: 
+        2px 2px 0px #c0392b,
+        4px 4px 0px #a93226,
+        6px 6px 10px rgba(0,0,0,0.4);
+    border: 3px solid #e74c3c;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(231,76,60,0.1) 0%, rgba(243,156,18,0.1) 100%);
+    box-shadow: 0 4px 15px rgba(231,76,60,0.3);
+}
+
+.site-title:hover {
+    transform: scale(1.05) rotate(-2deg);
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(231,76,60,0.5);
+    background: linear-gradient(135deg, rgba(231,76,60,0.2) 0%, rgba(243,156,18,0.2) 100%);
+}
+
+.site-title::before {
+    content: '🏐';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(-50%);
+    }
+    40% {
+        transform: translateY(-60%);
+    }
+    60% {
+        transform: translateY(-55%);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.nav-menu {
+    order: 3;
 }
 
 .nav-menu ul {
@@ -80,9 +130,43 @@ body {
     color: #e74c3c;
 }
 
+.lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+    position: relative;
+    z-index: 1002;
+    order: 2;
+}
+
+.lang-btn {
+    padding: 0.25rem 0.5rem;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    color: #333;
+    min-width: 40px;
+    text-align: center;
+}
+
+.lang-btn:hover {
+    background: #f8f9fa;
+}
+
+.lang-btn.active {
+    background: #E74C3C;
+    color: white;
+    border-color: #E74C3C;
+}
+
 .auth-buttons {
     display: flex;
     gap: 1rem;
+    order: 4;
 }
 
 .btn-login, .btn-register {
@@ -612,6 +696,32 @@ body {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* Hide browser translation features and any translate-related elements */
+#google_translate_element,
+.goog-te-banner-frame,
+.goog-te-menu-frame,
+.goog-te-gadget,
+.goog-te-combo,
+[id*="google_translate"],
+[class*="goog-te"],
+[class*="google-translate"],
+[title*="Send"],
+[aria-label*="Send"],
+button[title*="Send"],
+button[aria-label*="Send"],
+.translate-button,
+.translation-button,
+[data-translate],
+[translate] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-wrapper {
@@ -673,6 +783,11 @@ body {
     .auth-buttons {
         order: 2;
         gap: 0.5rem;
+    }
+    
+    .lang-switcher {
+        order: 1;
+        margin-right: 0.5rem;
     }
     
     .hero-title {

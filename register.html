@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録 - Sabai Volley</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="site-title">Sabai Volley</a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="#courts">コート</a></li>
+                        <li><a href="#events">イベント・大会</a></li>
+                        <li><a href="#circles">サークル</a></li>
+                        <li><a href="#junior">ジュニア</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn-login">ログイン</a>
+                    <a href="register.html" class="btn-register active">登録</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="メニューを開く">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <h1 class="auth-title" data-lang="register-title">新規登録</h1>
+                    <p class="auth-subtitle" data-lang="register-subtitle">Sabai Volleyへようこそ！アカウントを作成してバレーボールライフを始めましょう。</p>
+                    
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-group">
+                            <label for="userId" data-lang="label-userid">ユーザーID</label>
+                            <input type="text" id="userId" name="userId" required 
+                                   data-lang="placeholder-userid" placeholder="半角英数字4-20文字" pattern="[a-zA-Z0-9]{4,20}">
+                            <span class="form-error" id="userIdError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password" data-lang="label-password">パスワード</label>
+                            <input type="password" id="password" name="password" required 
+                                   data-lang="placeholder-password" placeholder="8文字以上" minlength="8">
+                            <span class="form-error" id="passwordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword" data-lang="label-confirm-password">パスワード（確認）</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required 
+                                   data-lang="placeholder-confirm-password" placeholder="もう一度パスワードを入力">
+                            <span class="form-error" id="confirmPasswordError"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nickname" data-lang="label-nickname">ニックネーム</label>
+                            <input type="text" id="nickname" name="nickname" required 
+                                   data-lang="placeholder-nickname" placeholder="表示名を入力" maxlength="20">
+                            <span class="form-error" id="nicknameError"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age" data-lang="label-age">年代</label>
+                                <select id="age" name="age" required>
+                                    <option value="" data-lang="select-placeholder">選択してください</option>
+                                    <option value="10代" data-lang="age-10s">10代</option>
+                                    <option value="20代" data-lang="age-20s">20代</option>
+                                    <option value="30代" data-lang="age-30s">30代</option>
+                                    <option value="40代" data-lang="age-40s">40代</option>
+                                    <option value="50代" data-lang="age-50s">50代</option>
+                                    <option value="60代以上" data-lang="age-60plus">60代以上</option>
+                                </select>
+                                <span class="form-error" id="ageError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="gender" data-lang="label-gender">性別</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="" data-lang="select-placeholder">選択してください</option>
+                                    <option value="男性" data-lang="gender-male">男性</option>
+                                    <option value="女性" data-lang="gender-female">女性</option>
+                                    <option value="その他" data-lang="gender-other">その他</option>
+                                </select>
+                                <span class="form-error" id="genderError"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span data-lang="terms-agree">利用規約とプライバシーポリシーに同意する</span>
+                            </label>
+                            <span class="form-error" id="termsError"></span>
+                        </div>
+
+                        <button type="submit" class="auth-btn" data-lang="btn-create-account">アカウントを作成</button>
+                    </form>
+
+                    <div class="auth-footer">
+                        <p><span data-lang="already-have-account">すでにアカウントをお持ちですか？</span> <a href="login.html" class="auth-link" data-lang="btn-login">ログイン</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="lang.js"></script>
+</body>
+</html>

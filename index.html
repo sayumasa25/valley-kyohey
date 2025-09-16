@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>バレー郷平 - バレーボールコート予約・イベント参加サイト</title>
+    <title>Sabai Volley - バレーボールコート予約・イベント参加</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description" content="バレーボールコートの空きを検索して予約できます！東京都や神奈川県をはじめ、全国のバレーボール施設が対象！またイベント主催や参加も簡単にできます。">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="apple-touch-icon" href="logo.png">
@@ -17,20 +18,19 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <div class="logo-placeholder">🏐</div>
-                    <h1>バレー郷平</h1>
+                    <a href="index.html" class="site-title">Sabai Volley</a>
                 </div>
                 <nav class="nav-menu">
                     <ul>
-                        <li><a href="#courts">コート</a></li>
-                        <li><a href="#events">イベント・大会</a></li>
-                        <li><a href="#circles">サークル</a></li>
-                        <li><a href="#junior">ジュニア</a></li>
+                        <li><a href="#courts" data-lang="nav-courts">コート</a></li>
+                        <li><a href="#events" data-lang="nav-events">イベント・大会</a></li>
+                        <li><a href="#circles" data-lang="nav-circles">サークル</a></li>
+                        <li><a href="#junior" data-lang="nav-junior">ジュニア</a></li>
                     </ul>
                 </nav>
                 <div class="auth-buttons">
-                    <a href="#login" class="btn-login">ログイン</a>
-                    <a href="#register" class="btn-register">登録</a>
+                    <a href="login.html" class="btn-login" data-lang="btn-login">ログイン</a>
+                    <a href="register.html" class="btn-register" data-lang="btn-register">登録</a>
                 </div>
                 <button class="mobile-menu-toggle" aria-label="メニューを開く">
                     <span></span>
@@ -53,8 +53,8 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">バレーボールを日常にしよう。</h1>
-                <p class="hero-subtitle">全国のバレーボールコートを簡単予約！イベント参加でもっと楽しく！</p>
+                <h1 class="hero-title" data-lang="hero-title">バレーボールを日常にしよう。</h1>
+                <p class="hero-subtitle" data-lang="hero-subtitle">全国のバレーボールコートを簡単予約！イベント参加でもっと楽しく！</p>
                 
                 <!-- Search Form -->
                 <div class="search-form">
@@ -110,32 +110,32 @@
                     <div class="feature-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>全国のコート検索</h3>
-                    <p>都営・県営・市営・区営・民間施設まで、全国のバレーボールコートを検索・予約できます。</p>
+                    <h3 data-lang="section-court-search">全国のコート検索</h3>
+                    <p data-lang="court-search-desc">都営・県営・市営・区営・民間施設まで、全国のバレーボールコートを検索・予約できます。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3>イベント・練習会</h3>
-                    <p>レベル別の練習会や大会に参加して、新しい仲間と出会いましょう。</p>
+                    <h3 data-lang="section-event-search">イベント・練習会</h3>
+                    <p data-lang="event-search-desc">レベル別の練習会や大会に参加して、新しい仲間と出会いましょう。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>サークル管理</h3>
-                    <p>サークルの管理や新メンバーの募集が簡単にできます。</p>
+                    <h3 data-lang="section-circle-management">サークル管理</h3>
+                    <p data-lang="circle-management-desc">サークルの管理や新メンバーの募集が簡単にできます。</p>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>アプリで便利</h3>
-                    <p>スマートフォンアプリでいつでもどこでも予約・参加が可能です。</p>
+                    <h3 data-lang="section-mobile-app">アプリで便利</h3>
+                    <p data-lang="mobile-app-desc">スマートフォンアプリでいつでもどこでも予約・参加が可能です。</p>
                 </div>
             </div>
         </div>
@@ -144,17 +144,17 @@
     <!-- Popular Courts Section -->
     <section class="popular-courts">
         <div class="container">
-            <h2 class="section-title">人気のバレーボールコート</h2>
+            <h2 class="section-title" data-lang="popular-courts-title">人気のバレーボールコート</h2>
             <div class="courts-grid">
                 <div class="court-card">
                     <div class="court-image-placeholder">🏐</div>
                     <div class="court-info">
-                        <h3>東京体育館</h3>
-                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 東京都渋谷区</p>
-                        <p class="court-price">¥2,000/時間</p>
+                        <h3 data-lang="court-tokyo-gym">東京体育館</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="court-tokyo-location">東京都渋谷区</span></p>
+                        <p class="court-price">¥2,000/<span data-lang="per-hour">時間</span></p>
                         <div class="court-rating">
                             <span class="stars">★★★★★</span>
-                            <span class="rating-text">4.8 (124件)</span>
+                            <span class="rating-text">4.8 (124<span data-lang="reviews-count">件</span>)</span>
                         </div>
                     </div>
                 </div>
@@ -162,12 +162,12 @@
                 <div class="court-card">
                     <div class="court-image-placeholder">🏐</div>
                     <div class="court-info">
-                        <h3>横浜アリーナ</h3>
-                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 神奈川県横浜市</p>
-                        <p class="court-price">¥2,500/時間</p>
+                        <h3 data-lang="court-yokohama-arena">横浜アリーナ</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="court-yokohama-location">神奈川県横浜市</span></p>
+                        <p class="court-price">¥2,500/<span data-lang="per-hour">時間</span></p>
                         <div class="court-rating">
                             <span class="stars">★★★★☆</span>
-                            <span class="rating-text">4.6 (89件)</span>
+                            <span class="rating-text">4.6 (89<span data-lang="reviews-count">件</span>)</span>
                         </div>
                     </div>
                 </div>
@@ -175,12 +175,12 @@
                 <div class="court-card">
                     <div class="court-image-placeholder">🏐</div>
                     <div class="court-info">
-                        <h3>埼玉県立武道館</h3>
-                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> 埼玉県さいたま市</p>
-                        <p class="court-price">¥1,800/時間</p>
+                        <h3 data-lang="court-saitama-budokan">埼玉県立武道館</h3>
+                        <p class="court-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="court-saitama-location">埼玉県さいたま市</span></p>
+                        <p class="court-price">¥1,800/<span data-lang="per-hour">時間</span></p>
                         <div class="court-rating">
                             <span class="stars">★★★★☆</span>
-                            <span class="rating-text">4.5 (67件)</span>
+                            <span class="rating-text">4.5 (67<span data-lang="reviews-count">件</span>)</span>
                         </div>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
     <!-- Events Section -->
     <section class="events">
         <div class="container">
-            <h2 class="section-title">今週のイベント・練習会</h2>
+            <h2 class="section-title" data-lang="events-title">今週のイベント・練習会</h2>
             <div class="events-grid">
                 <div class="event-card">
                     <div class="event-date">
@@ -199,48 +199,48 @@
                         <span class="day">15</span>
                     </div>
                     <div class="event-info">
-                        <h3>初心者歓迎！バレーボール練習会</h3>
-                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 東京都新宿区 - 新宿スポーツセンター</p>
+                        <h3 data-lang="event-beginner-practice">初心者歓迎！バレーボール練習会</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="event-location-shinjuku">東京都新宿区 - 新宿スポーツセンター</span></p>
                         <p class="event-time"><i class="fas fa-clock"></i> 19:00 - 21:00</p>
-                        <p class="event-level"><span class="level-badge beginner">初心者</span></p>
-                        <p class="event-participants">参加者: 12/16名</p>
+                        <p class="event-level"><span class="level-badge beginner" data-lang="level-beginner">初心者</span></p>
+                        <p class="event-participants"><span data-lang="participants">参加者</span>: 12/16<span data-lang="people-count">名</span></p>
                     </div>
                     <div class="event-action">
-                        <button class="btn-join">参加する</button>
+                        <button class="btn-join" data-lang="join-button">参加する</button>
                     </div>
                 </div>
                 
                 <div class="event-card">
                     <div class="event-date">
-                        <span class="month">9月</span>
+                        <span class="month" data-lang="september">9月</span>
                         <span class="day">16</span>
                     </div>
                     <div class="event-info">
-                        <h3>中級者向けゲーム練習</h3>
-                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 神奈川県横浜市 - 横浜体育館</p>
+                        <h3 data-lang="event-intermediate-practice">中級者向けゲーム練習</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="event-location-yokohama">神奈川県横浜市 - 横浜体育館</span></p>
                         <p class="event-time"><i class="fas fa-clock"></i> 14:00 - 17:00</p>
-                        <p class="event-level"><span class="level-badge intermediate">中級者</span></p>
-                        <p class="event-participants">参加者: 8/12名</p>
+                        <p class="event-level"><span class="level-badge intermediate" data-lang="level-intermediate">中級者</span></p>
+                        <p class="event-participants"><span data-lang="participants">参加者</span>: 8/12<span data-lang="people-count">名</span></p>
                     </div>
                     <div class="event-action">
-                        <button class="btn-join">参加する</button>
+                        <button class="btn-join" data-lang="join-button">参加する</button>
                     </div>
                 </div>
                 
                 <div class="event-card">
                     <div class="event-date">
-                        <span class="month">9月</span>
+                        <span class="month" data-lang="september">9月</span>
                         <span class="day">17</span>
                     </div>
                     <div class="event-info">
-                        <h3>女性限定バレーボール大会</h3>
-                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> 東京都品川区 - 品川区総合体育館</p>
+                        <h3 data-lang="event-women-tournament">女性限定バレーボール大会</h3>
+                        <p class="event-location"><i class="fas fa-map-marker-alt"></i> <span data-lang="event-location-shinagawa">東京都品川区 - 品川区総合体育館</span></p>
                         <p class="event-time"><i class="fas fa-clock"></i> 10:00 - 16:00</p>
-                        <p class="event-level"><span class="level-badge all">全レベル</span></p>
-                        <p class="event-participants">参加者: 24/32名</p>
+                        <p class="event-level"><span class="level-badge all" data-lang="level-all">全レベル</span></p>
+                        <p class="event-participants"><span data-lang="participants">参加者</span>: 24/32<span data-lang="people-count">名</span></p>
                     </div>
                     <div class="event-action">
-                        <button class="btn-join">参加する</button>
+                        <button class="btn-join" data-lang="join-button">参加する</button>
                     </div>
                 </div>
             </div>
@@ -252,8 +252,8 @@
         <div class="container">
             <div class="app-content">
                 <div class="app-text">
-                    <h2>アプリならもっと便利</h2>
-                    <p>スマートフォンアプリで、いつでもどこでもコート予約やイベント参加ができます。</p>
+                    <h2 data-lang="app-title">アプリならもっと便利</h2>
+                    <p data-lang="app-description">スマートフォンアプリで、いつでもどこでもコート予約やイベント参加ができます。</p>
                     <div class="app-buttons">
                         <a href="#" class="app-store-btn">
                             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
@@ -322,5 +322,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="lang.js"></script>
 </body>
 </html>

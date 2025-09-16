@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイページ - バレー郷平</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="site-title">Sabai Volley</a>
+                </div>
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" data-lang="nav-home">ホーム</a></li>
+                        <li><a href="#courts" data-lang="nav-courts">コート</a></li>
+                        <li><a href="#events" data-lang="nav-events">イベント・大会</a></li>
+                        <li><a href="#circles" data-lang="nav-circles">サークル</a></li>
+                        <li><a href="#junior" data-lang="nav-junior">ジュニア</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn-logout" id="logoutBtn" data-lang="btn-logout">ログアウト</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="メニューを開く" data-lang="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="mypage-main">
+        <div class="container">
+            <div class="mypage-header">
+                <h1 data-lang="mypage-title">マイページ</h1>
+                <div class="header-actions">
+                    <button class="share-btn" title="シェア" data-lang="share-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                            <polyline points="16,6 12,2 8,6"></polyline>
+                            <line x1="12" y1="2" x2="12" y2="15"></line>
+                        </svg>
+                    </button>
+                    <button class="settings-btn" title="設定" data-lang="settings-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="m12 1 1.68 3.64L17.36 6 14 12l3.36 6-3.68 1.36L12 23l-1.68-3.64L6.64 18 10 12 6.64 6l3.68-1.36L12 1z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-card">
+                    <div class="profile-avatar-container">
+                        <div class="profile-avatar" id="profileAvatar">
+                            <svg class="volleyball-icon" width="80" height="80" viewBox="0 0 100 100" fill="none">
+                                <circle cx="50" cy="50" r="45" fill="#E74C3C" stroke="#C0392B" stroke-width="2"/>
+                                <path d="M5 50 Q25 30, 50 50 Q75 70, 95 50" stroke="#C0392B" stroke-width="2" fill="none"/>
+                                <path d="M50 5 Q30 25, 50 50 Q70 75, 50 95" stroke="#C0392B" stroke-width="2" fill="none"/>
+                                <path d="M20 20 Q35 35, 50 20 Q65 5, 80 20" stroke="#C0392B" stroke-width="2" fill="none"/>
+                                <path d="M20 80 Q35 65, 50 80 Q65 95, 80 80" stroke="#C0392B" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <div class="level-badge" id="levelBadge">Lv.3</div>
+                        <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    </div>
+                    
+                    <div class="profile-info">
+                        <h2 class="profile-name" id="profileName">はっしー</h2>
+                        <button class="edit-profile-btn" id="editProfileBtn" data-lang="edit-profile">プロフィール編集</button>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="ageDisplay" data-lang="age-30s">30代</div>
+                        <div class="stat-label" data-lang="age-group">年代</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="genderDisplay" data-lang="gender-male">男性</div>
+                        <div class="stat-label" data-lang="gender">性別</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="levelDisplay" data-lang="level-beginner">初級</div>
+                        <div class="stat-label" data-lang="level">レベル</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="experienceDisplay" data-lang="exp-0">0年以上</div>
+                        <div class="stat-label" data-lang="volleyball-experience">バレー歴</div>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="activity-item">
+                        <div class="activity-value" id="hostCount">0<span data-lang="times-unit">回</span></div>
+                        <div class="activity-label" data-lang="host-count">主催回数</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-value" id="participationCount">0<span data-lang="times-unit">回</span></div>
+                        <div class="activity-label" data-lang="participation-count">参加回数</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-value" id="friendCount">0<span data-lang="people-unit">人</span></div>
+                        <div class="activity-label" data-lang="volleyball-friends">バレ友</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-value" id="practiceCount">0<span data-lang="people-unit">人</span></div>
+                        <div class="activity-label" data-lang="practice-people">練習人数</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div class="achievement-text">
+                        <span class="achievement-count" id="goodHostBadges">0<span data-lang="count-unit">個</span></span><span data-lang="good-host-badge">のGood主催者バッジを獲得</span>
+                    </div>
+                    <div class="achievement-arrow">›</div>
+                </div>
+                
+                <div class="achievement-item">
+                    <div class="achievement-icon">⚡</div>
+                    <div class="achievement-text">
+                        <span class="achievement-count" id="skillBadges">0<span data-lang="count-unit">個</span></span><span data-lang="skill-badge">のスキルバッジを獲得</span>
+                    </div>
+                    <div class="achievement-arrow">›</div>
+                </div>
+            </div>
+
+            <div class="racket-section">
+                <div class="section-header">
+                    <h3 data-lang="racket-title">使用ラケット</h3>
+                    <button class="add-racket-btn">
+                        <span class="plus-icon">+</span>
+                        <span data-lang="register-new">新規登録する</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </svg>
+            <span data-lang="nav-home">ホーム</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12,6 12,12 16,14"></polyline>
+            </svg>
+            <span data-lang="schedule">予定</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14,2 14,8 20,8"></polyline>
+            </svg>
+            <span data-lang="veteran-log">ベテログ</span>
+        </a>
+        <a href="#" class="nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m3 16 4 4 4-4"></path>
+                <path d="M7 20V4"></path>
+                <path d="m21 8-4-4-4 4"></path>
+                <path d="M17 4v16"></path>
+            </svg>
+            <span data-lang="chat">チャット</span>
+        </a>
+        <a href="mypage.html" class="nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4CAF50" stroke="#4CAF50" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span data-lang="mypage-nav">マイページ</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+    <script src="mypage.js"></script>
+</body>
+</html>
