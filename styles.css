@@ -214,7 +214,7 @@ body {
     z-index: -2;
 }
 
-.hero-video {
+.hero-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -731,49 +731,95 @@ button[aria-label*="Send"],
     
     .mobile-menu-toggle {
         display: flex;
-        order: 3;
     }
     
     .nav-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: white;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        transform: translateY(-10px);
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
+        position: fixed;
+        top: 80px;
+        left: -100%;
         width: 100%;
-        order: 4;
+        height: calc(100vh - 80px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    
+
     .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
+        left: 0;
     }
-    
+
     .nav-menu ul {
         flex-direction: column;
-        padding: 1rem 0;
-        gap: 0;
-        margin: 0;
+        gap: 2rem;
+        width: 100%;
+        text-align: center;
     }
-    
-    .nav-menu li {
-        border-bottom: 1px solid #f0f0f0;
+
+    .nav-menu ul li a {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
         width: 100%;
     }
-    
+
+    /* Hide main navigation items on mobile */
+    .nav-menu ul {
+        display: none;
+    }
+
+    /* Show auth buttons in mobile menu */
+    .nav-menu .mobile-auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 80%;
+        margin-top: 2rem;
+    }
+
+    /* Hide mobile auth buttons by default */
+    .mobile-auth-buttons {
+        display: none;
+    }
+
+    .nav-menu .mobile-auth-buttons .btn-login,
+    .nav-menu .mobile-auth-buttons .btn-register {
+        padding: 1rem;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .nav-menu .mobile-auth-buttons .btn-login {
+        background: transparent;
+        color: #e74c3c;
+        border: 2px solid #e74c3c;
+    }
+
+    .nav-menu .mobile-auth-buttons .btn-register {
+        background: #e74c3c;
+        color: white;
+        border: 2px solid #e74c3c;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
     .nav-menu a {
         display: block;
         padding: 1rem 2rem;
         color: #333;
         text-decoration: none;
-        transition: background-color 0.2s ease;
     }
     
     .nav-menu a:hover {

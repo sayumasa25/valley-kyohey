@@ -27,6 +27,10 @@
                         <li><a href="#circles" data-lang="nav-circles">サークル</a></li>
                         <li><a href="#junior" data-lang="nav-junior">ジュニア</a></li>
                     </ul>
+                    <div class="mobile-auth-buttons">
+                        <a href="login.html" class="btn-login" data-lang="btn-login">ログイン</a>
+                        <a href="register.html" class="btn-register" data-lang="btn-register">登録</a>
+                    </div>
                 </nav>
                 <div class="auth-buttons">
                     <a href="login.html" class="btn-login" data-lang="btn-login">ログイン</a>
@@ -44,12 +48,10 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
-            <video autoplay muted loop playsinline class="hero-video" poster="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjEyODAiIGhlaWdodD0iNzIwIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXJfMF8xKSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMTI4MCIgeTI9IjcyMCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRTc0QzNDIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0YzOUMxMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjx0ZXh0IHg9IjY0MCIgeT0iMzYwIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+QIEJhbGxldGJhbGwgVmlkZW88L3RleHQ+Cjwvc3ZnPgo=">
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1594736797933-d0c6e6d1d9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Thai people playing volleyball" loading="lazy">
+                <div class="hero-overlay"></div>
+            </div>
         </div>
         <div class="container">
             <div class="hero-content">
@@ -59,41 +61,41 @@
                 <!-- Search Form -->
                 <div class="search-form">
                     <div class="search-tabs">
-                        <button class="tab-btn active" data-tab="court">コート検索</button>
-                        <button class="tab-btn" data-tab="event">イベント検索</button>
+                        <button class="tab-btn active" data-tab="court" data-lang="search-court-tab">コート検索</button>
+                        <button class="tab-btn" data-tab="event" data-lang="search-event-tab">イベント検索</button>
                     </div>
                     
                     <div class="search-content">
                         <div class="tab-content active" id="court-search">
                             <div class="search-row">
-                                <select class="search-select">
-                                    <option value="">都道府県を選択</option>
-                                    <option value="tokyo">東京都</option>
-                                    <option value="kanagawa">神奈川県</option>
-                                    <option value="saitama">埼玉県</option>
-                                    <option value="chiba">千葉県</option>
+                                <select class="search-select" data-lang="search-prefecture">
+                                    <option value="" data-lang="search-prefecture-placeholder">都道府県を選択</option>
+                                    <option value="tokyo" data-lang="search-tokyo">東京都</option>
+                                    <option value="kanagawa" data-lang="search-kanagawa">神奈川県</option>
+                                    <option value="saitama" data-lang="search-saitama">埼玉県</option>
+                                    <option value="chiba" data-lang="search-chiba">千葉県</option>
                                 </select>
-                                <input type="date" class="search-input" placeholder="日付">
-                                <input type="time" class="search-input" placeholder="時間">
-                                <button class="search-btn"><i class="fas fa-search"></i> 検索</button>
+                                <input type="date" class="search-input" data-lang="search-date" placeholder="日付">
+                                <input type="time" class="search-input" data-lang="search-time" placeholder="時間">
+                                <button class="search-btn" data-lang="search-button"><i class="fas fa-search"></i> 検索</button>
                             </div>
                         </div>
                         
                         <div class="tab-content" id="event-search">
                             <div class="search-row">
-                                <select class="search-select">
-                                    <option value="">エリアを選択</option>
-                                    <option value="kanto">関東</option>
-                                    <option value="kansai">関西</option>
-                                    <option value="chubu">中部</option>
+                                <select class="search-select" data-lang="search-area">
+                                    <option value="" data-lang="search-area-placeholder">エリアを選択</option>
+                                    <option value="kanto" data-lang="search-kanto">関東</option>
+                                    <option value="kansai" data-lang="search-kansai">関西</option>
+                                    <option value="chubu" data-lang="search-chubu">中部</option>
                                 </select>
-                                <select class="search-select">
-                                    <option value="">レベルを選択</option>
-                                    <option value="beginner">初心者</option>
-                                    <option value="intermediate">中級者</option>
-                                    <option value="advanced">上級者</option>
+                                <select class="search-select" data-lang="search-level">
+                                    <option value="" data-lang="search-level-placeholder">レベルを選択</option>
+                                    <option value="beginner" data-lang="search-beginner">初心者</option>
+                                    <option value="intermediate" data-lang="search-intermediate">中級者</option>
+                                    <option value="advanced" data-lang="search-advanced">上級者</option>
                                 </select>
-                                <button class="search-btn"><i class="fas fa-search"></i> 検索</button>
+                                <button class="search-btn" data-lang="search-button"><i class="fas fa-search"></i> 検索</button>
                             </div>
                         </div>
                     </div>

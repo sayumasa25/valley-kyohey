@@ -15,9 +15,31 @@ class LanguageManager {
                 'btn-register': '登録',
                 'btn-logout': 'ログアウト',
                 
-                // Main page
+                // Hero Section
                 'hero-title': 'バレーボールを日常にしよう。',
                 'hero-subtitle': '全国のバレーボールコートを簡単予約！イベント参加でもっと楽しく！',
+                
+                // Search Form
+                'search-court-tab': 'コート検索',
+                'search-event-tab': 'イベント検索',
+                'search-prefecture-placeholder': '都道府県を選択',
+                'search-tokyo': '東京都',
+                'search-kanagawa': '神奈川県',
+                'search-saitama': '埼玉県',
+                'search-chiba': '千葉県',
+                'search-date': '日付',
+                'search-time': '時間',
+                'search-button': '検索',
+                'search-area-placeholder': 'エリアを選択',
+                'search-kanto': '関東',
+                'search-kansai': '関西',
+                'search-chubu': '中部',
+                'search-level-placeholder': 'レベルを選択',
+                'search-beginner': '初心者',
+                'search-intermediate': '中級者',
+                'search-advanced': '上級者',
+                
+                // Main page
                 'cta-find-courts': 'コートを探す',
                 'cta-join-events': 'イベントに参加',
                 'section-court-search': '全国のコート検索',
@@ -197,6 +219,26 @@ class LanguageManager {
                 'people-count': 'คน',
                 'join-button': 'เข้าร่วม',
                 'september': 'ก.ย.',
+                
+                // Search Form
+                'search-court-tab': 'ค้นหาสนาม',
+                'search-event-tab': 'ค้นหากิจกรรม',
+                'search-prefecture-placeholder': 'เลือกจังหวัด',
+                'search-tokyo': 'โตเกียว',
+                'search-kanagawa': 'คานากาวะ',
+                'search-saitama': 'ไซตามะ',
+                'search-chiba': 'ชิบะ',
+                'search-date': 'วันที่',
+                'search-time': 'เวลา',
+                'search-button': 'ค้นหา',
+                'search-area-placeholder': 'เลือกพื้นที่',
+                'search-kanto': 'คันโต',
+                'search-kansai': 'คันไซ',
+                'search-chubu': 'ชูบุ',
+                'search-level-placeholder': 'เลือกระดับ',
+                'search-beginner': 'ผู้เริ่มต้น',
+                'search-intermediate': 'ระดับกลาง',
+                'search-advanced': 'ระดับสูง',
                 'app-title': 'สะดวกยิ่งขึ้นด้วยแอป',
                 'app-description': 'ด้วยแอปสมาร์ทโฟน คุณสามารถจองสนามและเข้าร่วมกิจกรรมได้ทุกที่ทุกเวลา',
                 
