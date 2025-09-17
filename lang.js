@@ -39,6 +39,15 @@ class LanguageManager {
                 'search-intermediate': '中級者',
                 'search-advanced': '上級者',
                 
+                // District Search (Bangkok)
+                'search-district': '地区',
+                'search-district-placeholder': '地区を選択',
+                'search-siam': 'サイアム',
+                'search-silom': 'シーロム',
+                'search-sukhumvit': 'スクンビット',
+                'search-yaowarat': 'ヤワラート',
+                'search-riverside': 'リバーサイド',
+                
                 // Main page
                 'cta-find-courts': 'コートを探す',
                 'cta-join-events': 'イベントに参加',
@@ -239,6 +248,15 @@ class LanguageManager {
                 'search-beginner': 'ผู้เริ่มต้น',
                 'search-intermediate': 'ระดับกลาง',
                 'search-advanced': 'ระดับสูง',
+                
+                // District Search (Bangkok)
+                'search-district': 'ย่าน',
+                'search-district-placeholder': 'เลือกย่าน',
+                'search-siam': 'สยาม',
+                'search-silom': 'สีลม',
+                'search-sukhumvit': 'สุขุมวิท',
+                'search-yaowarat': 'เยาวราช',
+                'search-riverside': 'ริมแม่น้ำ',
                 'app-title': 'สะดวกยิ่งขึ้นด้วยแอป',
                 'app-description': 'ด้วยแอปสมาร์ทโฟน คุณสามารถจองสนามและเข้าร่วมกิจกรรมได้ทุกที่ทุกเวลา',
                 
@@ -400,8 +418,93 @@ class LanguageManager {
             document.title = this.translations[this.currentLang][titleKey] + ' - Sabai Volley';
         }
 
+        // Apply theme and assets per language
+        const htmlEl = document.documentElement;
+        if (htmlEl) {
+            htmlEl.setAttribute('lang', this.currentLang);
+        }
+
+        const body = document.body;
+        if (body) {
+            body.classList.remove('theme-ja', 'theme-th');
+            body.classList.add(this.currentLang === 'th' ? 'theme-th' : 'theme-ja');
+        }
+
+        const logoImg = document.getElementById('siteLogo');
+        if (logoImg) {
+            logoImg.setAttribute('src', this.currentLang === 'th' ? 'ロゴタイ語.png' : 'ロゴ日本語.png');
+            logoImg.setAttribute('alt', this.currentLang === 'th' ? 'Sabai Volley ロゴ(タイ語)' : 'Sabai Volley ロゴ(日本語)');
+        }
+
+        const favicon = document.getElementById('siteFavicon');
+        if (favicon) {
+            favicon.setAttribute('href', 'ファビコン.png');
+        }
+
         // Update language switcher
         this.updateLanguageSwitcher();
+
+        // Update currency for court prices
+        this.updatePricesByLanguage();
+    }
+
+    async getRateJPYtoTHB() {
+        const cacheKey = 'rate_JPY_THB';
+        const cacheTimeKey = 'rate_JPY_THB_time';
+        const ttlMs = 6 * 60 * 60 * 1000; // 6 hours
+        try {
+            const last = localStorage.getItem(cacheTimeKey);
+            const now = Date.now();
+            if (last && (now - parseInt(last, 10)) < ttlMs) {
+                const cached = localStorage.getItem(cacheKey);
+                if (cached) return parseFloat(cached);
+            }
+            const res = await fetch('https://api.exchangerate.host/latest?base=JPY&symbols=THB');
+            const data = await res.json();
+            const rate = data?.rates?.THB || 0.25; // fallback approx
+            localStorage.setItem(cacheKey, String(rate));
+            localStorage.setItem(cacheTimeKey, String(now));
+            return rate;
+        } catch (e) {
+            return 0.25; // fallback
+        }
+    }
+
+    formatJPY(amount) {
+        try {
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(amount);
+        } catch (e) {
+            return `¥${amount.toLocaleString()}`;
+        }
+    }
+
+    formatTHB(amount) {
+        try {
+            return new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', maximumFractionDigits: 0 }).format(amount);
+        } catch (e) {
+            return `${Math.round(amount).toLocaleString()}฿`;
+        }
+    }
+
+    async updatePricesByLanguage() {
+        const priceEls = document.querySelectorAll('.court-price');
+        if (!priceEls.length) return;
+
+        if (this.currentLang === 'th') {
+            const rate = await this.getRateJPYtoTHB();
+            priceEls.forEach(el => {
+                const jpy = parseFloat(el.getAttribute('data-price-jpy') || '0');
+                const thb = jpy * rate;
+                const span = el.querySelector('.price-amount');
+                if (span) span.textContent = this.formatTHB(thb);
+            });
+        } else {
+            priceEls.forEach(el => {
+                const jpy = parseFloat(el.getAttribute('data-price-jpy') || '0');
+                const span = el.querySelector('.price-amount');
+                if (span) span.textContent = this.formatJPY(jpy);
+            });
+        }
     }
 
     addLanguageSwitcher() {

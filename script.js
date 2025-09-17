@@ -174,50 +174,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+        // Keep background color consistent with theme variable
+        const headerBg = getComputedStyle(document.body).getPropertyValue('--header-bg') || '';
+        header.style.background = headerBg.trim() || '';
+        // Optional subtle effect when scrolled
         if (scrollTop > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
             header.style.backdropFilter = 'blur(10px)';
         } else {
-            header.style.background = '#fff';
             header.style.backdropFilter = 'none';
         }
-        
         lastScrollTop = scrollTop;
     });
 
-    // Mobile menu toggle (for future implementation)
-    function createMobileMenu() {
-        const navWrapper = document.querySelector('.nav-wrapper');
-        const mobileToggle = document.createElement('button');
-        mobileToggle.className = 'mobile-toggle';
-        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        
-        mobileToggle.addEventListener('click', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('mobile-open');
-        });
-        
-        // Add mobile toggle button on smaller screens
-        if (window.innerWidth <= 768) {
-            navWrapper.appendChild(mobileToggle);
-        }
-    }
-
-    // Initialize mobile menu if needed
-    createMobileMenu();
-
-    // Resize handler for mobile menu
-    window.addEventListener('resize', function() {
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        
-        if (window.innerWidth <= 768 && !mobileToggle) {
-            createMobileMenu();
-        } else if (window.innerWidth > 768 && mobileToggle) {
-            mobileToggle.remove();
-            document.querySelector('.nav-menu').classList.remove('mobile-open');
-        }
-    });
+    // Removed secondary mobile menu creator to prevent duplicate hamburger icons.
 
     // Form validation for search inputs
     const dateInputs = document.querySelectorAll('input[type="date"]');
