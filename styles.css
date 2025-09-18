@@ -33,6 +33,11 @@ body.theme-th {
     box-sizing: border-box;
 }
 
+html { 
+    -webkit-text-size-adjust: 100%; /* iOS Safari auto-zoom prevention */
+    text-size-adjust: 100%;
+}
+
 body {
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.6;
@@ -736,15 +741,15 @@ button[aria-label*="Send"],
   /* Mobile header/logo height */
   :root { --header-height: 84px; }
   /* Ensure hero content is fully visible below fixed header */
-  .hero { padding-top: calc(var(--header-height) + 56px); min-height: 85vh; }
+  .hero { padding-top: calc(var(--header-height) + 56px); min-height: 85svh; }
   .hero-title { font-size: clamp(1.8rem, 7vw, 2.6rem); line-height: 1.25; }
   .hero-subtitle { font-size: 1rem; }
     .nav-menu {
         position: fixed;
-        top: 80px;
+        top: var(--header-height);
         left: -100%;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100dvh - var(--header-height));
         background: white;
         flex-direction: column;
         justify-content: flex-start;
@@ -808,6 +813,15 @@ button[aria-label*="Send"],
     }
 }
 
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .desktop-auth-buttons {
+        display: none;
+    }
+
     .nav-menu .mobile-auth-buttons .btn-login,
     .nav-menu .mobile-auth-buttons .btn-register {
         padding: 1rem;
@@ -827,14 +841,6 @@ button[aria-label*="Send"],
         background: #e74c3c;
         color: white;
         border: 2px solid #e74c3c;
-    }
-
-    .desktop-auth-buttons {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
     }
 
     .right-section {
@@ -884,6 +890,34 @@ button[aria-label*="Send"],
     }
 }
 
+@media (max-width: 768px) {
+    .app-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .event-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: center;
+    }
+    
+    .courts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
         padding: 0 15px;
@@ -901,18 +935,42 @@ button[aria-label*="Send"],
         font-size: 2rem;
     }
 }
+
+
 /* Final guard: show exactly one set of auth buttons */
-.mobile-auth-buttons { display: none !important; }
+.mobile-auth-buttons { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
 .desktop-auth-buttons { display: flex !important; }
 
 @media (max-width: 768px) {
   /* On mobile: show only the mobile buttons inside hamburger menu */
-  .nav-menu .mobile-auth-buttons { display: flex !important; }
+  .nav-menu .mobile-auth-buttons { 
+    display: flex !important; 
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: static !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
   .desktop-auth-buttons { display: none !important; }
 }
 
 @media (min-width: 769px) {
   /* On desktop: ensure mobile set never appears */
-  .nav-menu .mobile-auth-buttons { display: none !important; }
+  .nav-menu .mobile-auth-buttons { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
   .desktop-auth-buttons { display: flex !important; }
 }

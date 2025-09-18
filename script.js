@@ -5,6 +5,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('.nav-menu');
     
     if (mobileToggle && navMenu) {
+        // Function to create mobile auth buttons only when needed
+        function createMobileAuthButtons() {
+            if (window.innerWidth <= 768) {
+                let mobileAuthButtons = navMenu.querySelector('.mobile-auth-buttons');
+                if (!mobileAuthButtons) {
+                    mobileAuthButtons = document.createElement('div');
+                    mobileAuthButtons.className = 'mobile-auth-buttons';
+                    mobileAuthButtons.innerHTML = `
+                        <a href="login.html" class="btn-login" data-lang="btn-login">ログイン</a>
+                        <a href="register.html" class="btn-register" data-lang="btn-register">登録</a>
+                    `;
+                    navMenu.appendChild(mobileAuthButtons);
+                }
+            } else {
+                // Remove mobile auth buttons on desktop
+                const mobileAuthButtons = navMenu.querySelector('.mobile-auth-buttons');
+                if (mobileAuthButtons) {
+                    mobileAuthButtons.remove();
+                }
+            }
+        }
+        
+        // Check on page load
+        createMobileAuthButtons();
+        
+        // Check on window resize
+        window.addEventListener('resize', createMobileAuthButtons);
+        
         mobileToggle.addEventListener('click', function() {
             mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
